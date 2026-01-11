@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "label": "// Écosystème Média",
+    "title": "Acteur média, pas agence",
+    "subtitle": "Un réseau de médias digitaux opérationnel. Une infrastructure éprouvée. Des audiences authentiques.",
+    "cta": "Discutons de votre projet"
+  },
+  "kpis": {
+    "media_count": {
+      "value": "12",
+      "label": "Médias actifs"
+    },
+    "audience": {
+      "value": "50K+",
+      "label": "Audience cumulée"
+    },
+    "years": {
+      "value": "5+",
+      "label": "Années d'expertise"
+    }
+  },
+  "services": {
+    "label": "// Nos Services",
+    "title": "Un écosystème intégré",
+    "subtitle": "Quatre piliers en synergie pour construire votre présence média",
+    "items": {
+      "press": {
+        "title": "Online Press",
+        "description": "Infrastructure réelle de diffusion via un réseau de médias digitaux opérationnels"
+      },
+      "content": {
+        "title": "Content Production",
+        "description": "Studio éditorial produisant du contenu \"media-grade\" authentique"
+      },
+      "training": {
+        "title": "Training",
+        "description": "Formation ancrée dans la pratique réelle des médias digitaux"
+      },
+      "consulting": {
+        "title": "Consulting",
+        "description": "Stratégie média, SEO, monétisation et développement d'audience"
+      }
+    }
+  },
+  "showcase": {
+    "label": "// Projets & Médias",
+    "title": "Notre réseau en action",
+    "subtitle": "Médias actifs, audiences réelles, crédibilité éprouvée"
+  },
+  "about": {
+    "label": "// Qui Sommes-Nous",
+    "title": "Pourquoi Color Pulse Media",
+    "subtitle": "Ce qui nous différencie",
+    "points": {
+      "infrastructure": {
+        "title": "Infrastructure média réelle",
+        "description": "Nous ne parlons pas de résultats théoriques. Nous exploitons quotidiennement un réseau de médias digitaux actifs."
+      },
+      "method": {
+        "title": "Méthode éprouvée",
+        "description": "Nous appliquons à vos projets les mêmes méthodes que celles utilisées pour nos propres médias."
+      },
+      "synergy": {
+        "title": "Synergie des 4 piliers",
+        "description": "Online Press, Content Production, Training et Consulting fonctionnent ensemble pour créer un écosystème cohérent."
+      }
+    }
+  },
+  "contact": {
+    "label": "// Contact",
+    "title": "Construisons ensemble",
+    "subtitle": "Discutons de votre projet média",
+    "form": {
+      "name": "Nom complet",
+      "email": "Email professionnel",
+      "company": "Entreprise",
+      "project": "Parlez-nous de votre projet",
+      "budget": "Budget estimé",
+      "timeline": "Timeline souhaitée",
+      "submit": "Envoyer"
+    }
+  },
+  "footer": {
+    "tagline": "Acteur média opérationnel",
+    "cta": "Prenez contact",
+    "rights": "© 2026 Color Pulse Media. Tous droits réservés."
+  }
+}

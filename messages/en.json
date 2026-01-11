@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "label": "// Media Ecosystem",
+    "title": "Media operator, not agency",
+    "subtitle": "An operational digital media network. Proven infrastructure. Authentic audiences.",
+    "cta": "Let's discuss your project"
+  },
+  "kpis": {
+    "media_count": {
+      "value": "12",
+      "label": "Active media"
+    },
+    "audience": {
+      "value": "50K+",
+      "label": "Cumulative audience"
+    },
+    "years": {
+      "value": "5+",
+      "label": "Years of expertise"
+    }
+  },
+  "services": {
+    "label": "// Our Services",
+    "title": "An integrated ecosystem",
+    "subtitle": "Four synergistic pillars to build your media presence",
+    "items": {
+      "press": {
+        "title": "Online Press",
+        "description": "Real distribution infrastructure via an operational digital media network"
+      },
+      "content": {
+        "title": "Content Production",
+        "description": "Editorial studio producing authentic \"media-grade\" content"
+      },
+      "training": {
+        "title": "Training",
+        "description": "Training grounded in real digital media practice"
+      },
+      "consulting": {
+        "title": "Consulting",
+        "description": "Media strategy, SEO, monetization and audience development"
+      }
+    }
+  },
+  "showcase": {
+    "label": "// Projects & Media",
+    "title": "Our network in action",
+    "subtitle": "Active media, real audiences, proven credibility"
+  },
+  "about": {
+    "label": "// Who We Are",
+    "title": "Why Color Pulse Media",
+    "subtitle": "What sets us apart",
+    "points": {
+      "infrastructure": {
+        "title": "Real media infrastructure",
+        "description": "We don't talk about theoretical results. We operate an active digital media network on a daily basis."
+      },
+      "method": {
+        "title": "Proven method",
+        "description": "We apply to your projects the same methods we use for our own media."
+      },
+      "synergy": {
+        "title": "Synergy of 4 pillars",
+        "description": "Online Press, Content Production, Training and Consulting work together to create a coherent ecosystem."
+      }
+    }
+  },
+  "contact": {
+    "label": "// Contact",
+    "title": "Let's build together",
+    "subtitle": "Discuss your media project",
+    "form": {
+      "name": "Full name",
+      "email": "Professional email",
+      "company": "Company",
+      "project": "Tell us about your project",
+      "budget": "Estimated budget",
+      "timeline": "Desired timeline",
+      "submit": "Send"
+    }
+  },
+  "footer": {
+    "tagline": "Operational media operator",
+    "cta": "Get in touch",
+    "rights": "© 2026 Color Pulse Media. All rights reserved."
+  }
+}

@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    @apply font-sans bg-dark text-light antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-light;
+  }
+
+  p {
+    @apply text-light-subtle;
+  }
+
+  a {
+    @apply text-accent hover:text-accent-hover;
+  }
+}
+
+@layer components {
+  .form-label {
+    @apply block text-sm font-medium text-light-muted mb-2;
+  }
+
+  .form-label:has(+ :required)::after {
+    content: ' *';
+    color: #ff5555;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 bg-dark-card border border-dark-border rounded-lg text-light placeholder-light-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent;
+  }
+  
+  select.form-input {
+    @apply appearance-none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23a1a1a1' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+  }
+}
+
+@layer utilities {
+  .section-label {
+    @apply text-xs md:text-sm font-mono text-accent tracking-wider uppercase mb-6;
+  }
+
+  .card-dark {
+    @apply bg-dark-card border border-dark-border rounded-xl transition-colors;
+  }
+}

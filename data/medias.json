@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": {
+      "fr": "Tech Insights Daily",
+      "en": "Tech Insights Daily"
+    },
+    "description": {
+      "fr": "Média B2B spécialisé dans l'innovation technologique",
+      "en": "B2B media specialized in technological innovation"
+    },
+    "type": "Blog",
+    "url": "#",
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": {
+      "fr": "Growth Playbook",
+      "en": "Growth Playbook"
+    },
+    "description": {
+      "fr": "Newsletter hebdomadaire pour scale-ups en croissance",
+      "en": "Weekly newsletter for growing scale-ups"
+    },
+    "type": "Newsletter",
+    "url": "#",
+    "active": true
+  },
+  {
+    "id": 3,
+    "name": {
+      "fr": "Digital Strategy Podcast",
+      "en": "Digital Strategy Podcast"
+    },
+    "description": {
+      "fr": "Interviews d'experts en transformation digitale",
+      "en": "Interviews with digital transformation experts"
+    },
+    "type": "Podcast",
+    "url": "#",
+    "active": true
+  },
+  {
+    "id": 4,
+    "name": {
+      "fr": "SaaS Marketing Hub",
+      "en": "SaaS Marketing Hub"
+    },
+    "description": {
+      "fr": "Ressources marketing pour entreprises SaaS B2B",
+      "en": "Marketing resources for B2B SaaS companies"
+    },
+    "type": "Blog",
+    "url": "#",
+    "active": true
+  }
+]
