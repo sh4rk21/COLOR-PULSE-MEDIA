@@ -35,3 +35,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI & Dev Tooling (Local only)
+.gemini/
+.claude/
+.cursor/
+_bmad/
+_bmad-output/
+CLAUDE.md
+USER_REPLY.md
