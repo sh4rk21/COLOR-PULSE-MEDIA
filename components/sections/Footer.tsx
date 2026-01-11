@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Footer() {
   const t = useTranslations('footer')
@@ -27,7 +28,14 @@ export default function Footer() {
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <motion.div variants={itemVariants}>
-            <h3 className="text-2xl font-light text-light mb-2">Color Pulse Media</h3>
+            <Image
+              src="/logo/logo.png"
+              alt="Color Pulse Media"
+              width={300}
+              height={100}
+              className="w-auto h-16 md:h-20 mb-4"
+              style={{ width: 'auto' }}
+            />
             <p className="text-light-muted text-sm">{t('tagline')}</p>
           </motion.div>
 
@@ -39,7 +47,7 @@ export default function Footer() {
                   key={label}
                   href={`#${label.toLowerCase().replace('à propos', 'about')}`} 
                   className="block text-sm text-light-muted"
-                  whileHover={{ color: 'var(--colors-light)', x: 2 }}
+                  whileHover={{ color: '#f5f5f5', x: 2 }}
                 >
                   {label}
                 </motion.a>
@@ -52,7 +60,7 @@ export default function Footer() {
             <motion.a
               href="#contact"
               className="inline-block px-6 py-3 bg-accent text-white font-medium rounded-lg"
-              whileHover={{ scale: 1.05, backgroundColor: 'var(--colors-accent-hover)' }}
+              whileHover={{ scale: 1.05, backgroundColor: '#0062cc' }}
               whileTap={{ scale: 0.95 }}
             >
               {t('cta')}

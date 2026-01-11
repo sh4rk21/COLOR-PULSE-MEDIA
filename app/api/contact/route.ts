@@ -1,4 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { Resend } from 'resend'
+import { ContactTemplate } from '@/components/emails/ContactTemplate'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: NextRequest) {
   try {
@@ -21,37 +25,37 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid email format' }, { status: 400 })
     }
 
-    // TODO: Intégrer avec un service email (SendGrid, Resend, etc.)
-    // Pour l'instant, on log dans la console (remplacer en production)
-    console.log('Contact form submission:', {
-      name,
-      email,
-      company,
-      project,
-      budget,
-      timeline,
-      timestamp: new Date().toISOString(),
-    })
+    // Vérifier si la clé API est configurée
+    if (!process.env.RESEND_API_KEY) {
+      console.warn('RESEND_API_KEY manquante. Log console uniquement.')
+      console.log('Form data:', { name, email, company, project, budget, timeline })
+      return NextResponse.json({ success: true, message: 'Simulation (Key missing)' }, { status: 200 })
+    }
 
-    // Simuler envoi email (à remplacer par vraie intégration)
-    // Exemple avec Resend:
-    // import { Resend } from 'resend'
-    // const resend = new Resend(process.env.RESEND_API_KEY)
-    // await resend.emails.send({
-    //   from: 'contact@colorpulsemedia.com',
-    //   to: 'hello@colorpulsemedia.com',
-    //   subject: `Nouveau contact: ${name}`,
-    //   html: `<p><strong>Nom:</strong> ${name}</p>
-    //          <p><strong>Email:</strong> ${email}</p>
-    //          <p><strong>Entreprise:</strong> ${company}</p>
-    //          <p><strong>Projet:</strong> ${project}</p>
-    //          <p><strong>Budget:</strong> ${budget}</p>
-    //          <p><strong>Timeline:</strong> ${timeline}</p>`,
-    // })
+    try {
+      const data = await resend.emails.send({
+        // Utiliser 'onboarding@resend.dev' pour tester sans domaine, 
+        // ou votre domaine vérifié une fois configuré (ex: 'contact@colorpulsemedia.com')
+        from: 'Color Pulse Media Website <onboarding@resend.dev>',
+        to: ['publishing@eldorado-consulting.com'], // Votre email personnel pour recevoir les tests
+        replyTo: email, // Pour répondre directement au client
+        subject: `Nouveau contact : ${name} (${company || 'Particulier'})`,
+        react: ContactTemplate({ name, email, company, project, budget, timeline }),
+      })
 
-    return NextResponse.json({ success: true }, { status: 200 })
-  } catch (error) {
+      if (data.error) {
+        console.error('Resend error:', data.error)
+        return NextResponse.json({ error: data.error.message }, { status: 500 })
+      }
+
+      return NextResponse.json({ success: true }, { status: 200 })
+    } catch (emailError: any) {
+      console.error('Resend send error:', emailError)
+      return NextResponse.json({ error: emailError.message || 'Error sending email' }, { status: 500 })
+    }
+
+  } catch (error: any) {
     console.error('Contact form error:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    return NextResponse.json({ error: error.message || 'Internal server error' }, { status: 500 })
   }
 }
