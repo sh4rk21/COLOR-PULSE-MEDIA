@@ -55,6 +55,7 @@ export default function Header() {
             width={48}
             height={48}
             className="w-auto h-10 md:h-12"
+            style={{ width: 'auto' }}
             priority
           />
         </motion.a>
@@ -78,7 +79,7 @@ export default function Header() {
         <motion.button
           onClick={switchLocale}
           className="hidden md:block px-4 py-2 text-sm font-medium border border-dark-border rounded-lg text-light-subtle"
-          whileHover={{ scale: 1.05, color: 'var(--colors-accent)', borderColor: 'var(--colors-accent)' }}
+          whileHover={{ scale: 1.05, color: '#007aff', borderColor: '#007aff' }}
           whileTap={{ scale: 0.95 }}
           aria-label={`Switch to ${locale === 'fr' ? 'English' : 'Français'}`}
         >

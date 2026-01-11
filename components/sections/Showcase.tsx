@@ -110,7 +110,7 @@ export default function Showcase() {
               custom={index}
               variants={cardVariants}
               whileHover={{ 
-                borderColor: 'var(--colors-accent)',
+                borderColor: '#007aff',
                 y: -5,
               }}
             >
@@ -147,8 +147,8 @@ export default function Showcase() {
             href="#contact"
             className="inline-block px-8 py-4 text-sm font-medium border border-dark-border text-light rounded-lg"
             whileHover={{
-              borderColor: 'var(--colors-accent)',
-              color: 'var(--colors-accent)',
+              borderColor: '#007aff',
+              color: '#007aff',
             }}
           >
             Découvrez notre réseau complet

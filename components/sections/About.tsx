@@ -75,7 +75,7 @@ export default function About() {
               className="card-dark p-10"
               custom={index}
               variants={cardVariants}
-              whileHover={{ borderColor: 'var(--colors-accent)', y: -5 }}
+              whileHover={{ borderColor: '#007aff', y: -5 }}
             >
               <h3 className="text-xl md:text-2xl font-light text-light mb-4">
                 {t(`points.${key}.title`)}
@@ -91,7 +91,7 @@ export default function About() {
           <motion.a
             href="#contact"
             className="inline-block px-8 py-4 bg-accent text-white font-medium rounded-lg"
-            whileHover={{ scale: 1.05, backgroundColor: 'var(--colors-accent-hover)' }}
+            whileHover={{ scale: 1.05, backgroundColor: '#0062cc' }}
             whileTap={{ scale: 0.95 }}
           >
             Travaillons ensemble

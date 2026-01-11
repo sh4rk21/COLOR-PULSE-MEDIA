@@ -84,7 +84,7 @@ export default function Hero() {
             <motion.a
               href="#contact"
               className="px-8 py-4 bg-accent text-white font-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-dark"
-              whileHover={{ scale: 1.05, backgroundColor: 'var(--colors-accent-hover)' }}
+              whileHover={{ scale: 1.05, backgroundColor: '#0062cc' }}
               whileTap={{ scale: 0.95 }}
             >
               {t('cta')}
@@ -98,7 +98,7 @@ export default function Hero() {
                 className="card-dark p-8"
                 custom={index}
                 variants={kpiVariants}
-                whileHover={{ borderColor: 'var(--colors-accent)', y: -5 }}
+                whileHover={{ borderColor: '#007aff', y: -5 }}
               >
                 <div className="text-5xl md:text-6xl font-light text-accent mb-3">
                   {kpisT(`${key}.value`)}
