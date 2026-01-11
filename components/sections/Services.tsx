@@ -63,6 +63,7 @@ export default function Services() {
       initial="hidden"
       whileInView="visible"
       viewport={viewport}
+      style={{ position: 'relative' }}
     >
       <motion.div
         className="absolute top-[15%] right-[5%] w-72 h-72 rounded-full bg-accent/5"

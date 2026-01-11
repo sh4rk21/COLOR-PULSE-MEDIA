@@ -52,9 +52,9 @@ export default function Header() {
           <Image
             src="/logo/logo.png"
             alt="Color Pulse Media"
-            width={48}
-            height={48}
-            className="w-auto h-10 md:h-12"
+            width={300}
+            height={100}
+            className="w-auto h-20 md:h-28"
             style={{ width: 'auto' }}
             priority
           />

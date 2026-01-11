@@ -69,6 +69,7 @@ export default function Showcase() {
       initial="hidden"
       whileInView="visible"
       viewport={viewport}
+      style={{ position: 'relative' }}
     >
       {/* Parallax Elements */}
       <motion.div
