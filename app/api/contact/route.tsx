@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
         to: ['publishing@eldorado-consulting.com'], // Votre email personnel pour recevoir les tests
         replyTo: email, // Pour répondre directement au client
         subject: `Nouveau contact : ${name} (${company || 'Particulier'})`,
-        react: ContactTemplate({ name, email, company, project, budget, timeline }),
+        react: <ContactTemplate name={name} email={email} company={company} project={project} budget={budget} timeline={timeline} />,
       })
 
       if (data.error) {

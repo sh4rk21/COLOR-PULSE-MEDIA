@@ -38,7 +38,7 @@ export default function Showcase() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 1, ease: [0.15, 0.75, 0.13, 0.95] },
+      transition: { duration: 1, ease: [0.15, 0.75, 0.13, 0.95] as const },
     },
   }
 

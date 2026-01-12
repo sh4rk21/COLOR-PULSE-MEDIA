@@ -7,7 +7,7 @@ export default function Hero() {
   const t = useTranslations('hero')
   const kpisT = useTranslations('kpis')
 
-  const customEase = [0.15, 0.75, 0.13, 0.95]
+  const customEase = [0.15, 0.75, 0.13, 0.95] as const
 
   const containerVariants = {
     hidden: { opacity: 0 },

@@ -7,7 +7,7 @@ export default function About() {
   const t = useTranslations('about')
   const points = ['infrastructure', 'method', 'synergy']
   
-  const customEase = [0.15, 0.75, 0.13, 0.95]
+  const customEase = [0.15, 0.75, 0.13, 0.95] as const
   const viewport = { once: true, amount: 0.1 }
 
   const containerVariants = {

@@ -22,7 +22,7 @@ export default function Services() {
 
   const parallaxY = useTransform(scrollYProgress, [0, 1], ['-15%', '15%'])
 
-  const customEase = [0.15, 0.75, 0.13, 0.95]
+  const customEase = [0.15, 0.75, 0.13, 0.95] as const
   const viewport = { once: true, amount: 0.1 }
 
   const containerVariants = {

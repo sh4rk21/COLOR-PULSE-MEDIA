@@ -9,7 +9,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
-  const customEase = [0.15, 0.75, 0.13, 0.95]
+  const customEase = [0.15, 0.75, 0.13, 0.95] as const
   const viewport = { once: true, amount: 0.1 }
 
   const containerVariants = {
