@@ -45,7 +45,8 @@
   "showcase": {
     "label": "// Projets & Médias",
     "title": "Notre réseau en action",
-    "subtitle": "Médias actifs, audiences réelles, crédibilité éprouvée"
+    "subtitle": "Médias actifs, audiences réelles, crédibilité éprouvée",
+    "cta": "Découvrez notre réseau complet"
   },
   "about": {
     "label": "// Qui Sommes-Nous",
@@ -64,7 +65,8 @@
         "title": "Synergie des 4 piliers",
         "description": "Online Press, Content Production, Training et Consulting fonctionnent ensemble pour créer un écosystème cohérent."
       }
-    }
+    },
+    "cta": "Travaillons ensemble"
   },
   "contact": {
     "label": "// Contact",

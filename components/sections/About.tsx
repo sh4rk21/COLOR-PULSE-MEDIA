@@ -94,7 +94,7 @@ export default function About() {
             whileHover={{ scale: 1.05, backgroundColor: '#0062cc' }}
             whileTap={{ scale: 0.95 }}
           >
-            Travaillons ensemble
+            {t('cta')}
           </motion.a>
         </motion.div>
       </div>

@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { ContactTemplate } from '@/components/emails/ContactTemplate'
-
-const resend = new Resend(process.env.RESEND_API_KEY)
+import { render } from '@react-email/render'
 
 export async function POST(request: NextRequest) {
   try {
@@ -26,13 +25,27 @@ export async function POST(request: NextRequest) {
     }
 
     // Vérifier si la clé API est configurée
-    if (!process.env.RESEND_API_KEY) {
+    const apiKey = process.env.RESEND_API_KEY
+    if (!apiKey) {
       console.warn('RESEND_API_KEY manquante. Log console uniquement.')
       console.log('Form data:', { name, email, company, project, budget, timeline })
       return NextResponse.json({ success: true, message: 'Simulation (Key missing)' }, { status: 200 })
     }
 
+    const resend = new Resend(apiKey)
+
     try {
+      const emailHtml = await render(
+        <ContactTemplate 
+          name={name} 
+          email={email} 
+          company={company} 
+          project={project} 
+          budget={budget} 
+          timeline={timeline} 
+        />
+      )
+
       const data = await resend.emails.send({
         // Utiliser 'onboarding@resend.dev' pour tester sans domaine, 
         // ou votre domaine vérifié une fois configuré (ex: 'contact@colorpulsemedia.com')
@@ -40,7 +53,7 @@ export async function POST(request: NextRequest) {
         to: ['publishing@eldorado-consulting.com'], // Votre email personnel pour recevoir les tests
         replyTo: email, // Pour répondre directement au client
         subject: `Nouveau contact : ${name} (${company || 'Particulier'})`,
-        react: <ContactTemplate name={name} email={email} company={company} project={project} budget={budget} timeline={timeline} />,
+        html: emailHtml,
       })
 
       if (data.error) {

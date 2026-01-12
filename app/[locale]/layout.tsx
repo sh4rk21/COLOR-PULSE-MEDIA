@@ -41,6 +41,9 @@ export async function generateMetadata({
     title: metadata[locale as 'fr' | 'en'].title,
     description: metadata[locale as 'fr' | 'en'].description,
     metadataBase: new URL(baseUrl),
+    icons: {
+      icon: '/logo/favicon.ico',
+    },
     alternates: {
       canonical: `/${locale}`,
       languages: {
