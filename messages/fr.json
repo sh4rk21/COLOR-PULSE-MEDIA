@@ -86,5 +86,115 @@
     "tagline": "Acteur média opérationnel",
     "cta": "Prenez contact",
     "rights": "© 2026 Color Pulse Media. Tous droits réservés."
+  },
+  "order": {
+    "title": "Nouvelle commande",
+    "subtitle": "Choisissez votre site et votre prestation",
+    "filterLangue": "Langue",
+    "filterThematique": "Thématique",
+    "allLangues": "Toutes les langues",
+    "allThematiques": "Toutes les thématiques",
+    "selectSite": "Site de publication",
+    "chooseSite": "-- Choisir un site --",
+    "loading": "Chargement des sites...",
+    "orderFor": "Commande pour",
+    "pricePreview": "Prix estimé",
+    "validation": {
+      "toContinue": "Pour continuer :"
+    },
+    "steps": {
+      "mode": "Mode",
+      "details": "Détails",
+      "info": "Infos",
+      "payment": "Paiement"
+    },
+    "modes": {
+      "lien_seul": {
+        "title": "Lien seul",
+        "description": "Ajoutez un ou plusieurs liens dans un article existant de notre rédaction"
+      },
+      "article_fourni": {
+        "title": "Article fourni",
+        "description": "Vous fournissez l'article, nous le publions avec vos liens"
+      },
+      "redaction": {
+        "title": "Rédaction complète",
+        "description": "Nous rédigeons un article sur mesure incluant vos liens"
+      }
+    },
+    "details": {
+      "linkCount": "Nombre de liens",
+      "link": "lien",
+      "links": "liens",
+      "uploadArticle": "Votre article",
+      "uploadHint": "PDF, DOC, DOCX, TXT, HTML ou RTF (max 10MB)",
+      "briefing": "Briefing",
+      "briefingHint": "Décrivez le sujet, le ton souhaité, les points clés à aborder...",
+      "titleIdea": "Idée de titre",
+      "titleIdeaPlaceholder": "Ex: Les 10 meilleures pratiques pour...",
+      "wordCount": "Nombre de mots",
+      "words": "mots",
+      "attachments": "Pièces jointes",
+      "attachmentsHint": "Documents de référence, images, etc.",
+      "extraLink": "lien supp."
+    },
+    "placements": {
+      "whatever": "Peu importe",
+      "first": "Début d'article",
+      "middle": "Milieu d'article",
+      "end": "Fin d'article"
+    },
+    "customer": {
+      "email": "Email",
+      "emailPlaceholder": "votre@email.com",
+      "name": "Nom / Société",
+      "namePlaceholder": "Jean Dupont ou ACME Inc.",
+      "nameHint": "Pour la facturation si nécessaire"
+    },
+    "payment": {
+      "summary": "Récapitulatif",
+      "mode": "Mode",
+      "links": "Liens",
+      "wordCount": "Nombre de mots",
+      "total": "Total",
+      "paymentMethod": "Méthode de paiement",
+      "instructions": "Instructions",
+      "paypalInstructions": "Envoyez le montant exact à l'adresse PayPal ci-dessous :",
+      "revolutInstructions": "Envoyez le montant via Revolut au tag ci-dessous :",
+      "sepaInstructions": "Effectuez un virement SEPA avec les coordonnées suivantes :",
+      "achInstructions": "Pour un virement ACH depuis les États-Unis :",
+      "swiftInstructions": "Pour un virement SWIFT international depuis les États-Unis :",
+      "internationalInstructions": "Pour un virement international :",
+      "confirmPayment": "J'ai effectué le paiement du montant indiqué",
+      "submit": "Confirmer la commande",
+      "submitting": "Envoi en cours...",
+      "iban": "IBAN",
+      "bic": "BIC",
+      "beneficiary": "Bénéficiaire",
+      "address": "Adresse",
+      "accountNumber": "N° compte",
+      "routingNumber": "Routing",
+      "swiftCode": "SWIFT",
+      "bankName": "Banque",
+      "bankAddress": "Adresse banque",
+      "email": "Email",
+      "tag": "Tag",
+      "referenceLabel": "Référence à inclure dans le paiement"
+    },
+    "navigation": {
+      "back": "Retour",
+      "next": "Continuer"
+    },
+    "errors": {
+      "noSite": "Paramètre manquant",
+      "noSiteDescription": "L'URL doit contenir un paramètre site. Ex: /order?site=example.fr",
+      "siteNotFound": "Site non disponible",
+      "siteNotFoundDescription": "Ce site n'est pas disponible pour commander actuellement.",
+      "loadingFailed": "Erreur de chargement"
+    },
+    "success": {
+      "title": "Commande envoyée !",
+      "message": "Merci pour votre commande. Nous vérifions votre paiement et vous contactons sous 24h."
+    }
   }
 }

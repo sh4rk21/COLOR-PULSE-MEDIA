@@ -86,5 +86,115 @@
     "tagline": "Operational media operator",
     "cta": "Get in touch",
     "rights": "© 2026 Color Pulse Media. All rights reserved."
+  },
+  "order": {
+    "title": "New order",
+    "subtitle": "Choose your site and service",
+    "filterLangue": "Language",
+    "filterThematique": "Topic",
+    "allLangues": "All languages",
+    "allThematiques": "All topics",
+    "selectSite": "Publication site",
+    "chooseSite": "-- Choose a site --",
+    "loading": "Loading sites...",
+    "orderFor": "Order for",
+    "pricePreview": "Estimated price",
+    "validation": {
+      "toContinue": "To continue:"
+    },
+    "steps": {
+      "mode": "Mode",
+      "details": "Details",
+      "info": "Info",
+      "payment": "Payment"
+    },
+    "modes": {
+      "lien_seul": {
+        "title": "Link only",
+        "description": "Add one or more links to an existing article from our editorial team"
+      },
+      "article_fourni": {
+        "title": "Article provided",
+        "description": "You provide the article, we publish it with your links"
+      },
+      "redaction": {
+        "title": "Full writing",
+        "description": "We write a custom article including your links"
+      }
+    },
+    "details": {
+      "linkCount": "Number of links",
+      "link": "link",
+      "links": "links",
+      "uploadArticle": "Your article",
+      "uploadHint": "PDF, DOC, DOCX, TXT, HTML or RTF (max 10MB)",
+      "briefing": "Briefing",
+      "briefingHint": "Describe the topic, desired tone, key points to cover...",
+      "titleIdea": "Title idea",
+      "titleIdeaPlaceholder": "E.g.: The 10 best practices for...",
+      "wordCount": "Word count",
+      "words": "words",
+      "attachments": "Attachments",
+      "attachmentsHint": "Reference documents, images, etc.",
+      "extraLink": "extra link"
+    },
+    "placements": {
+      "whatever": "Anywhere",
+      "first": "Beginning of article",
+      "middle": "Middle of article",
+      "end": "End of article"
+    },
+    "customer": {
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "name": "Name / Company",
+      "namePlaceholder": "John Doe or ACME Inc.",
+      "nameHint": "For invoicing if needed"
+    },
+    "payment": {
+      "summary": "Summary",
+      "mode": "Mode",
+      "links": "Links",
+      "wordCount": "Word count",
+      "total": "Total",
+      "paymentMethod": "Payment method",
+      "instructions": "Instructions",
+      "paypalInstructions": "Send the exact amount to the PayPal address below:",
+      "revolutInstructions": "Send the amount via Revolut to the tag below:",
+      "sepaInstructions": "Make a SEPA transfer with the following details:",
+      "achInstructions": "For an ACH transfer from the United States:",
+      "swiftInstructions": "For an international SWIFT transfer from the United States:",
+      "internationalInstructions": "For an international wire transfer:",
+      "confirmPayment": "I have made the payment for the indicated amount",
+      "submit": "Confirm order",
+      "submitting": "Submitting...",
+      "iban": "IBAN",
+      "bic": "BIC",
+      "beneficiary": "Beneficiary",
+      "address": "Address",
+      "accountNumber": "Account #",
+      "routingNumber": "Routing",
+      "swiftCode": "SWIFT",
+      "bankName": "Bank",
+      "bankAddress": "Bank address",
+      "email": "Email",
+      "tag": "Tag",
+      "referenceLabel": "Reference to include in payment"
+    },
+    "navigation": {
+      "back": "Back",
+      "next": "Continue"
+    },
+    "errors": {
+      "noSite": "Missing parameter",
+      "noSiteDescription": "The URL must contain a site parameter. E.g.: /order?site=example.com",
+      "siteNotFound": "Site unavailable",
+      "siteNotFoundDescription": "This site is not currently available for ordering.",
+      "loadingFailed": "Loading failed"
+    },
+    "success": {
+      "title": "Order submitted!",
+      "message": "Thank you for your order. We will verify your payment and contact you within 24 hours."
+    }
   }
 }
