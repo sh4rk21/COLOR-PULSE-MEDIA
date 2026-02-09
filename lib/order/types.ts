@@ -26,6 +26,12 @@ export interface SitePricing {
   Prix_1000_Mots: number;
   Prix_1500_Mots: number;
   Actif: boolean;
+  Discover_Score: number;
+  Google_News: boolean;
+  TF: number;
+  CF: number;
+  RD: number;
+  DR: number;
 }
 
 export interface OrderFormData {
@@ -70,6 +76,52 @@ export function generateOrderReference(siteName: string): string {
     Math.random().toString(36).slice(-2).toUpperCase();
 
   return `${initials}-${uniquePart}`;
+}
+
+export interface CartItem {
+  id: string;
+  site: SitePricing;
+  mode: OrderMode | null;
+  links: LinkDetail[];
+  linkCount: number;
+  wordCount: WordCount;
+  briefing: string;
+  titleIdea: string;
+  articleFile: File | null;
+  fileUrl?: string;
+  price: number;
+  configured: boolean;
+}
+
+export interface CatalogueFilters {
+  langue: string;
+  thematique: string;
+  googleNews: boolean | null;
+  discoverMin: number;
+  drMin: number;
+  drMax: number;
+  search: string;
+}
+
+export type CatalogueView = 'list' | 'grid';
+
+export interface MultiOrderSubmitPayload {
+  items: {
+    site: string;
+    siteName: string;
+    mode: OrderMode;
+    links: LinkDetail[];
+    wordCount?: WordCount;
+    briefing?: string;
+    titleIdea?: string;
+    fileUrl?: string;
+    price: number;
+  }[];
+  email: string;
+  name?: string;
+  paymentMethod: PaymentMethod;
+  totalPrice: number;
+  orderReference: string;
 }
 
 export interface PricingResponse {

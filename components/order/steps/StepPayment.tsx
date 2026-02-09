@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import PaymentCard from '../ui/PaymentCard';
 import CopyButton from '../ui/CopyButton';
-import type { OrderMode, PaymentMethod, SitePricing, LinkDetail } from '@/lib/order/types';
+import type { OrderMode, PaymentMethod, SitePricing, LinkDetail, CartItem } from '@/lib/order/types';
 import { PAYMENT_METHODS } from '@/lib/order/constants';
 import { calculatePrice, formatPrice } from '@/lib/order/pricing';
 
@@ -21,6 +21,8 @@ interface StepPaymentProps {
   isSubmitting: boolean;
   locale: string;
   orderReference: string;
+  cartItems?: CartItem[];
+  cartTotal?: number;
   t: {
     summary: string;
     mode: string;
@@ -71,14 +73,19 @@ export default function StepPayment({
   isSubmitting,
   locale,
   orderReference,
+  cartItems,
+  cartTotal,
   t,
 }: StepPaymentProps) {
-  const totalPrice = calculatePrice(
-    pricing,
-    mode,
-    links.length,
-    wordCount as 500 | 800 | 1000 | 1500 | undefined
-  );
+  const isMulti = cartItems && cartItems.length > 0;
+  const totalPrice = isMulti && cartTotal != null
+    ? cartTotal
+    : calculatePrice(
+        pricing,
+        mode,
+        links.length,
+        wordCount as 500 | 800 | 1000 | 1500 | undefined
+      );
 
   const paymentMethodsArray = Object.entries(PAYMENT_METHODS) as [PaymentMethod, typeof PAYMENT_METHODS[PaymentMethod]][];
 
@@ -190,19 +197,37 @@ export default function StepPayment({
           <h3 className="text-sm font-medium text-light">{t.summary}</h3>
         </div>
         <div className="space-y-2.5 text-sm">
-          <div className="flex justify-between items-center">
-            <span className="text-light-muted">{t.mode}</span>
-            <span className="text-light font-medium">{t.modeLabels[mode]}</span>
-          </div>
-          <div className="flex justify-between items-center">
-            <span className="text-light-muted">{t.links}</span>
-            <span className="text-light font-medium">{links.length}</span>
-          </div>
-          {mode === 'redaction' && wordCount && (
-            <div className="flex justify-between items-center">
-              <span className="text-light-muted">{t.wordCount}</span>
-              <span className="text-light font-medium">{wordCount} {t.words}</span>
-            </div>
+          {isMulti ? (
+            <>
+              {cartItems.map((item) => (
+                <div key={item.id} className="flex justify-between items-center">
+                  <div className="flex-1 min-w-0">
+                    <span className="text-light font-medium truncate block">{item.site.Nom}</span>
+                    <span className="text-xs text-light-muted">
+                      {item.mode ? t.modeLabels[item.mode] : '--'} &middot; {item.links.length} {t.links}
+                    </span>
+                  </div>
+                  <span className="text-light font-medium shrink-0 ml-2">{formatPrice(item.price)}</span>
+                </div>
+              ))}
+            </>
+          ) : (
+            <>
+              <div className="flex justify-between items-center">
+                <span className="text-light-muted">{t.mode}</span>
+                <span className="text-light font-medium">{t.modeLabels[mode]}</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-light-muted">{t.links}</span>
+                <span className="text-light font-medium">{links.length}</span>
+              </div>
+              {mode === 'redaction' && wordCount && (
+                <div className="flex justify-between items-center">
+                  <span className="text-light-muted">{t.wordCount}</span>
+                  <span className="text-light font-medium">{wordCount} {t.words}</span>
+                </div>
+              )}
+            </>
           )}
           <div className="pt-3 mt-3 border-t border-dark-border flex justify-between items-center">
             <span className="text-light font-medium">{t.total}</span>

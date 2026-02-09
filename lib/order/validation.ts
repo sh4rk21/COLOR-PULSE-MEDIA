@@ -24,6 +24,29 @@ export const orderSubmitSchema = z.object({
 
 export type OrderSubmitInput = z.infer<typeof orderSubmitSchema>;
 
+export const multiOrderItemSchema = z.object({
+  site: z.string().min(1),
+  siteName: z.string().min(1),
+  mode: z.enum(['lien_seul', 'article_fourni', 'redaction']),
+  links: z.array(linkDetailSchema).min(1),
+  wordCount: z.number().optional(),
+  briefing: z.string().optional(),
+  titleIdea: z.string().optional(),
+  fileUrl: z.string().optional(),
+  price: z.number().positive(),
+});
+
+export const multiOrderSubmitSchema = z.object({
+  items: z.array(multiOrderItemSchema).min(1),
+  email: z.string().email('Email invalide'),
+  name: z.string().optional(),
+  paymentMethod: z.enum(['paypal', 'revolut', 'sepa', 'us_ach', 'us_swift', 'international']),
+  totalPrice: z.number().positive(),
+  orderReference: z.string().min(1),
+});
+
+export type MultiOrderSubmitInput = z.infer<typeof multiOrderSubmitSchema>;
+
 // Validation per step
 export function validateStep1(mode: string | null): boolean {
   return mode !== null && ['lien_seul', 'article_fourni', 'redaction'].includes(mode);

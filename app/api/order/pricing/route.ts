@@ -20,6 +20,12 @@ interface NocoDBSiteRecord {
   Prix_1000_Mots: string;
   Prix_1500_Mots: string;
   Actif: string;
+  'Discover Score': number | string;
+  'Google News': boolean | string;
+  TF: string;
+  CF: string;
+  RD: string;
+  DR: string;
 }
 
 interface NocoDBResponse {
@@ -42,6 +48,12 @@ function parseNocoDBRecord(record: NocoDBSiteRecord): SitePricing {
     Prix_1000_Mots: parseInt(record.Prix_1000_Mots, 10) || 0,
     Prix_1500_Mots: parseInt(record.Prix_1500_Mots, 10) || 0,
     Actif: record.Actif === 'true' || record.Actif === '1',
+    Discover_Score: Number(record['Discover Score']) || 0,
+    Google_News: record['Google News'] === true || record['Google News'] === 'true' || record['Google News'] === '1',
+    TF: parseInt(record.TF, 10) || 0,
+    CF: parseInt(record.CF, 10) || 0,
+    RD: parseInt(record.RD, 10) || 0,
+    DR: Math.round(parseFloat(String(record.DR)) || 0),
   };
 }
 

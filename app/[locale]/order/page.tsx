@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import OrderForm from '@/components/order/OrderForm';
+import MultiOrderForm from '@/components/order/MultiOrderForm';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -53,8 +53,8 @@ export default async function OrderPage({ params, searchParams }: PageProps) {
 
       {/* Content */}
       <div className="relative z-10 py-8 sm:py-12 px-4 sm:px-6">
-        <div className="container mx-auto max-w-2xl">
-          <OrderForm preselectedSite={preselectedSite} locale={locale} />
+        <div className="container mx-auto max-w-6xl">
+          <MultiOrderForm preselectedSite={preselectedSite} locale={locale} />
         </div>
       </div>
     </main>

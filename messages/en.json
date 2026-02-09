@@ -181,6 +181,38 @@
       "tag": "Tag",
       "referenceLabel": "Reference to include in payment"
     },
+    "catalogue": {
+      "title": "Our sites",
+      "subtitle": "Select one or more sites for your order",
+      "filterGoogleNews": "Google News",
+      "filterDiscover": "Discover",
+      "search": "Search",
+      "searchPlaceholder": "Search a site, topic...",
+      "drRange": "DR (range)",
+      "selectedCount": "site(s) selected",
+      "configure": "Configure",
+      "noResults": "No sites match your filters.",
+      "resetFilters": "Reset filters",
+      "viewList": "List view",
+      "viewGrid": "Grid view"
+    },
+    "sidebar": {
+      "title": "Sites to configure",
+      "configured": "Configured",
+      "pending": "Pending",
+      "current": "Current"
+    },
+    "cart": {
+      "title": "Cart summary",
+      "addMore": "Add a site",
+      "continuePayment": "Proceed to payment",
+      "edit": "Edit",
+      "remove": "Remove",
+      "notConfigured": "Not configured",
+      "emptyCart": "Your cart is empty",
+      "allConfigured": "All sites are configured",
+      "someNotConfigured": "Some sites are not yet configured"
+    },
     "navigation": {
       "back": "Back",
       "next": "Continue"

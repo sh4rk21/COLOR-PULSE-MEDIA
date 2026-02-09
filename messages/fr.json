@@ -181,6 +181,38 @@
       "tag": "Tag",
       "referenceLabel": "Référence à inclure dans le paiement"
     },
+    "catalogue": {
+      "title": "Nos sites",
+      "subtitle": "Sélectionnez un ou plusieurs sites pour votre commande",
+      "filterGoogleNews": "Google News",
+      "filterDiscover": "Discover",
+      "search": "Rechercher",
+      "searchPlaceholder": "Rechercher un site, thématique...",
+      "drRange": "DR (range)",
+      "selectedCount": "site(s) sélectionné(s)",
+      "configure": "Configurer",
+      "noResults": "Aucun site ne correspond à vos filtres.",
+      "resetFilters": "Réinitialiser les filtres",
+      "viewList": "Vue liste",
+      "viewGrid": "Vue grille"
+    },
+    "sidebar": {
+      "title": "Sites à configurer",
+      "configured": "Configuré",
+      "pending": "En attente",
+      "current": "En cours"
+    },
+    "cart": {
+      "title": "Récapitulatif du panier",
+      "addMore": "Ajouter un site",
+      "continuePayment": "Passer au paiement",
+      "edit": "Modifier",
+      "remove": "Supprimer",
+      "notConfigured": "Non configuré",
+      "emptyCart": "Votre panier est vide",
+      "allConfigured": "Tous les sites sont configurés",
+      "someNotConfigured": "Certains sites ne sont pas encore configurés"
+    },
     "navigation": {
       "back": "Retour",
       "next": "Continuer"
