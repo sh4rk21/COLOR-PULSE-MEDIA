@@ -1,4 +1,11 @@
 {
+  "nav": {
+    "services": "Services",
+    "projects": "Projets",
+    "about": "À propos",
+    "contact": "Contact",
+    "order": "Commander"
+  },
   "hero": {
     "label": "// Écosystème Média",
     "title": "Acteur média, pas agence",
@@ -120,7 +127,8 @@
       "redaction": {
         "title": "Rédaction complète",
         "description": "Nous rédigeons un article sur mesure incluant vos liens"
-      }
+      },
+      "unavailable": "Indisponible sur ce site"
     },
     "details": {
       "linkCount": "Nombre de liens",

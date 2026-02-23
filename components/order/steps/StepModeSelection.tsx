@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import RadioCard from '../ui/RadioCard';
 import type { OrderMode, SitePricing } from '@/lib/order/types';
-import { formatPrice } from '@/lib/order/pricing';
+import { formatPrice, isModeAvailable } from '@/lib/order/pricing';
 
 interface StepModeSelectionProps {
   selectedMode: OrderMode | null;
@@ -13,6 +13,7 @@ interface StepModeSelectionProps {
     lien_seul: { title: string; description: string };
     article_fourni: { title: string; description: string };
     redaction: { title: string; description: string };
+    unavailable: string;
   };
 }
 
@@ -24,7 +25,7 @@ export default function StepModeSelection({
   pricing,
   t,
 }: StepModeSelectionProps) {
-  const modes: { mode: OrderMode; icon: string; title: string; description: string; price: number }[] = [
+  const modes: { mode: OrderMode; icon: string; title: string; description: string; price: number | null }[] = [
     {
       mode: 'lien_seul',
       icon: '🔗',
@@ -56,23 +57,28 @@ export default function StepModeSelection({
       transition={{ duration: 0.4, ease: customEase }}
       className="space-y-4"
     >
-      {modes.map((item, index) => (
-        <motion.div
-          key={item.mode}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.1, duration: 0.4, ease: customEase }}
-        >
-          <RadioCard
-            icon={item.icon}
-            title={item.title}
-            description={item.description}
-            price={`${formatPrice(item.price)}+`}
-            selected={selectedMode === item.mode}
-            onClick={() => onModeSelect(item.mode)}
-          />
-        </motion.div>
-      ))}
+      {modes.map((item, index) => {
+        const available = isModeAvailable(pricing, item.mode);
+        return (
+          <motion.div
+            key={item.mode}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1, duration: 0.4, ease: customEase }}
+          >
+            <RadioCard
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+              price={item.price !== null ? `${formatPrice(item.price)}+` : ''}
+              selected={selectedMode === item.mode}
+              onClick={() => onModeSelect(item.mode)}
+              disabled={!available}
+              unavailableLabel={!available ? t.unavailable : undefined}
+            />
+          </motion.div>
+        );
+      })}
     </motion.div>
   );
 }

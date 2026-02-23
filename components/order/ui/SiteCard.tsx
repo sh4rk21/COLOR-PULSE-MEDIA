@@ -61,11 +61,26 @@ export default function SiteCard({ site, selected, pinned, variant = 'list', onT
 
           {/* Discover + GNews */}
           <div className="shrink-0 flex items-center gap-1.5">
-            <StarRating score={site.Discover_Score} />
+            <StarRating score={site.Discover_Score} views={site.Discover_Views} />
             {site.Google_News && (
-              <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-green-500/10 text-green-400 border border-green-500/20">
-                GNews
-              </span>
+              site.Google_News_URL ? (
+                <a
+                  href={site.Google_News_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-green-500/10 text-green-400 border border-green-500/20 hover:bg-green-500/20 hover:border-green-500/40 hover:shadow-[0_0_8px_rgba(34,197,94,0.15)] transition-all"
+                >
+                  GNews
+                  <svg className="w-2.5 h-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              ) : (
+                <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-green-500/10 text-green-400 border border-green-500/20">
+                  GNews
+                </span>
+              )
             )}
           </div>
 
@@ -133,11 +148,26 @@ export default function SiteCard({ site, selected, pinned, variant = 'list', onT
 
           {/* Discover + GNews */}
           <div className="flex items-center gap-1.5 mb-2">
-            <StarRating score={site.Discover_Score} />
+            <StarRating score={site.Discover_Score} views={site.Discover_Views} />
             {site.Google_News && (
-              <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-green-500/10 text-green-400 border border-green-500/20">
-                GNews
-              </span>
+              site.Google_News_URL ? (
+                <a
+                  href={site.Google_News_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-green-500/10 text-green-400 border border-green-500/20 hover:bg-green-500/20 hover:border-green-500/40 hover:shadow-[0_0_8px_rgba(34,197,94,0.15)] transition-all"
+                >
+                  GNews
+                  <svg className="w-2.5 h-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              ) : (
+                <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-green-500/10 text-green-400 border border-green-500/20">
+                  GNews
+                </span>
+              )
             )}
           </div>
 

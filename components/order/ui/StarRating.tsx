@@ -2,12 +2,19 @@
 
 interface StarRatingProps {
   score: number;
+  views?: number;
   max?: number;
 }
 
-export default function StarRating({ score, max = 5 }: StarRatingProps) {
+function formatViews(views: number): string {
+  if (views >= 1_000_000) return `${(views / 1_000_000).toFixed(1).replace('.0', '')}M`;
+  if (views >= 1_000) return `${(views / 1_000).toFixed(1).replace('.0', '')}k`;
+  return views.toLocaleString('fr-FR');
+}
+
+export default function StarRating({ score, views, max = 5 }: StarRatingProps) {
   return (
-    <div className="flex items-center gap-1">
+    <div className="relative group flex items-center gap-1">
       <span className="text-[10px] font-medium text-yellow-400/70 uppercase tracking-wide">Discover</span>
       {Array.from({ length: max }, (_, i) => {
         const filled = i < score;
@@ -22,6 +29,16 @@ export default function StarRating({ score, max = 5 }: StarRatingProps) {
           </svg>
         );
       })}
+
+      {/* Tooltip */}
+      {views != null && views > 0 && (
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1.5 rounded-lg bg-dark border border-dark-border shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-150 whitespace-nowrap z-50">
+          <p className="text-[11px] font-medium text-light">
+            <span className="text-yellow-400">{formatViews(views)}</span> vues Discover
+          </p>
+          <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-px border-4 border-transparent border-t-dark-border" />
+        </div>
+      )}
     </div>
   );
 }

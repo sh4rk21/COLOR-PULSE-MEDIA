@@ -406,6 +406,7 @@ export default function MultiOrderForm({ preselectedSite, locale }: MultiOrderFo
       title: t('modes.redaction.title'),
       description: t('modes.redaction.description'),
     },
+    unavailable: t('modes.unavailable'),
   };
 
   const modeLabels: Record<OrderMode, string> = {

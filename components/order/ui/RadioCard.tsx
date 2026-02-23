@@ -10,6 +10,7 @@ interface RadioCardProps {
   selected: boolean;
   onClick: () => void;
   disabled?: boolean;
+  unavailableLabel?: string;
 }
 
 export default function RadioCard({
@@ -20,6 +21,7 @@ export default function RadioCard({
   selected,
   onClick,
   disabled = false,
+  unavailableLabel,
 }: RadioCardProps) {
   return (
     <motion.button
@@ -57,12 +59,18 @@ export default function RadioCard({
 
           {/* Price - large and prominent */}
           <div className="mt-3 pt-3 border-t border-dark-border/50">
-            <span className={`
-              text-xl font-bold tracking-tight transition-colors
-              ${selected ? 'text-accent' : 'text-light-subtle'}
-            `}>
-              {price}
-            </span>
+            {disabled && unavailableLabel ? (
+              <span className="text-sm font-medium text-light-muted/60">
+                {unavailableLabel}
+              </span>
+            ) : (
+              <span className={`
+                text-xl font-bold tracking-tight transition-colors
+                ${selected ? 'text-accent' : 'text-light-subtle'}
+              `}>
+                {price}
+              </span>
+            )}
           </div>
         </div>
       </div>

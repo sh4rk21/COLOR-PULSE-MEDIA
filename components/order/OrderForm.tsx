@@ -287,6 +287,7 @@ export default function OrderForm({ preselectedSite, locale }: OrderFormProps) {
       title: t('modes.redaction.title'),
       description: t('modes.redaction.description'),
     },
+    unavailable: t('modes.unavailable'),
   };
 
   const detailsTranslations = {

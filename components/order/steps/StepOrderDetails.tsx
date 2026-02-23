@@ -221,7 +221,7 @@ export default function StepOrderDetails({
       >
         <label className="block text-[11px] uppercase tracking-wider text-light-muted mb-2 font-medium">
           {t.linkCount}
-          {pricing.Prix_Lien_Sup > 0 && (
+          {pricing.Prix_Lien_Sup != null && pricing.Prix_Lien_Sup > 0 && (
             <span className="normal-case tracking-normal ml-2 text-light-muted/60">
               ({t.extraLink}: +{formatPrice(pricing.Prix_Lien_Sup)})
             </span>

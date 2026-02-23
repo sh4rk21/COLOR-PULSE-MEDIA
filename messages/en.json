@@ -1,4 +1,11 @@
 {
+  "nav": {
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "order": "Order"
+  },
   "hero": {
     "label": "// Media Ecosystem",
     "title": "Media operator, not agency",
@@ -120,7 +127,8 @@
       "redaction": {
         "title": "Full writing",
         "description": "We write a custom article including your links"
-      }
+      },
+      "unavailable": "Unavailable on this site"
     },
     "details": {
       "linkCount": "Number of links",

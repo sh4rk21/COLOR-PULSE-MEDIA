@@ -20,7 +20,9 @@ interface NocoDBSiteRecord {
   Prix_1500_Mots: string;
   Actif: string;
   'Discover Score': number | string;
+  'VUE DISCOVER': number | string;
   'Google News': boolean | string;
+  'URL GNEWS': string | null;
   TF: string;
   CF: string;
   RD: string;
@@ -31,6 +33,12 @@ interface NocoDBResponse {
   list: NocoDBSiteRecord[];
 }
 
+function parsePrice(value: string | null | undefined): number | null {
+  if (value === null || value === undefined || value === '') return null;
+  const parsed = parseInt(value, 10);
+  return isNaN(parsed) ? null : parsed;
+}
+
 function parseNocoDBRecord(record: NocoDBSiteRecord): SitePricing {
   return {
     Id: record.Id,
@@ -38,17 +46,19 @@ function parseNocoDBRecord(record: NocoDBSiteRecord): SitePricing {
     Nom: record.Nom,
     Langue: record.Langue,
     Thematique: record.Thematique,
-    Prix_Lien: parseInt(record.Prix_Lien, 10) || 0,
-    Prix_Lien_Sup: parseInt(record.Prix_Lien_Sup, 10) || 0,
-    Prix_Article: parseInt(record.Prix_Article, 10) || 0,
-    Prix_Article_Redige: parseInt(record.Prix_Article_Redige, 10) || 0,
-    Prix_500_Mots: parseInt(record.Prix_500_Mots, 10) || 0,
-    Prix_800_Mots: parseInt(record.Prix_800_Mots, 10) || 0,
-    Prix_1000_Mots: parseInt(record.Prix_1000_Mots, 10) || 0,
-    Prix_1500_Mots: parseInt(record.Prix_1500_Mots, 10) || 0,
+    Prix_Lien: parsePrice(record.Prix_Lien),
+    Prix_Lien_Sup: parsePrice(record.Prix_Lien_Sup),
+    Prix_Article: parsePrice(record.Prix_Article),
+    Prix_Article_Redige: parsePrice(record.Prix_Article_Redige),
+    Prix_500_Mots: parsePrice(record.Prix_500_Mots),
+    Prix_800_Mots: parsePrice(record.Prix_800_Mots),
+    Prix_1000_Mots: parsePrice(record.Prix_1000_Mots),
+    Prix_1500_Mots: parsePrice(record.Prix_1500_Mots),
     Actif: record.Actif === 'true' || record.Actif === '1',
     Discover_Score: Number(record['Discover Score']) || 0,
+    Discover_Views: Number(record['VUE DISCOVER']) || 0,
     Google_News: record['Google News'] === true || record['Google News'] === 'true' || record['Google News'] === '1',
+    Google_News_URL: record['URL GNEWS'] || null,
     TF: parseInt(record.TF, 10) || 0,
     CF: parseInt(record.CF, 10) || 0,
     RD: parseInt(record.RD, 10) || 0,

@@ -1,15 +1,17 @@
 'use client'
 
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { usePathname, useRouter } from '@/i18n/routing'
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Header() {
   const locale = useLocale()
   const pathname = usePathname()
   const router = useRouter()
+  const t = useTranslations('nav')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const switchLocale = () => {
@@ -19,11 +21,13 @@ export default function Header() {
   const closeMenu = () => setIsMenuOpen(false)
 
   const navLinks = [
-    { href: '#services', label: 'Services' },
-    { href: '#showcase', label: 'Projets' },
-    { href: '#about', label: 'À propos' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#services', label: t('services') },
+    { href: '#showcase', label: t('projects') },
+    { href: '#about', label: t('about') },
+    { href: '#contact', label: t('contact') },
   ]
+
+  const orderHref = `/${locale === 'fr' ? 'fr' : locale}/order`
 
   const menuVariants = {
     hidden: { opacity: 0, height: 0 },
@@ -36,15 +40,15 @@ export default function Header() {
   }
 
   return (
-    <motion.header 
+    <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-md border-b border-dark-border"
     >
       <div className="container mx-auto px-6 lg:px-12 py-6 flex justify-between items-center max-w-7xl">
-        <motion.a 
-          href="#hero" 
+        <motion.a
+          href="#hero"
           className="flex items-center"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -61,7 +65,7 @@ export default function Header() {
         </motion.a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-8" aria-label="Navigation principale">
+        <nav className="hidden md:flex items-center gap-8" aria-label="Navigation principale">
           {navLinks.map(link => (
             <motion.a
               key={link.href}
@@ -73,6 +77,15 @@ export default function Header() {
               {link.label}
             </motion.a>
           ))}
+          <Link href={orderHref}>
+            <motion.span
+              className="text-sm font-medium px-4 py-2 rounded-lg bg-accent text-white hover:bg-accent-hover transition-colors"
+              whileHover={{ y: -2, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {t('order')}
+            </motion.span>
+          </Link>
         </nav>
 
         {/* Desktop Language Toggle */}
@@ -131,6 +144,15 @@ export default function Header() {
                   {link.label}
                 </motion.a>
               ))}
+              <motion.div variants={menuItemVariants}>
+                <Link
+                  href={orderHref}
+                  onClick={closeMenu}
+                  className="inline-flex items-center gap-2 px-4 py-3 mt-1 text-sm font-medium rounded-lg bg-accent text-white"
+                >
+                  {t('order')}
+                </Link>
+              </motion.div>
               <motion.button
                 onClick={() => { switchLocale(); closeMenu(); }}
                 className="px-4 py-3 mt-2 text-sm font-medium border border-dark-border rounded-lg text-left text-light-subtle"
